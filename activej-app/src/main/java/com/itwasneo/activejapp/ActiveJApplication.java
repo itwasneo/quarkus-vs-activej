@@ -8,7 +8,7 @@ import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
 import io.activej.launchers.http.HttpServerLauncher;
 
-public class Application extends HttpServerLauncher {
+public class ActiveJApplication extends HttpServerLauncher {
 
 	@Provides
 	AsyncServlet servlet() {
@@ -22,7 +22,7 @@ public class Application extends HttpServerLauncher {
 
 
 	public static void main(String[] args) throws Exception {
-		Launcher launcher = new Application();
+		Launcher launcher = new ActiveJApplication();
 		launcher.launch(args);
 	}
 }

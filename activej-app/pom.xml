@@ -38,4 +38,39 @@
         </dependency>
 
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>native</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.graalvm.buildtools</groupId>
+                        <artifactId>native-maven-plugin</artifactId>
+                        <version>0.9.14</version>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>build-native</id>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>com.itwasneo.activejapp.ActiveJApplication</mainClass>
+                            <imageName>activej-native-app</imageName>
+                            <buildArgs>
+                                <buildArg>--no-fallback</buildArg>
+                                <buildArg>
+                                    -H:ReflectionConfigurationFiles=${project.basedir}/config/reflectionconfig.json
+                                </buildArg>
+                            </buildArgs>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
