@@ -4,6 +4,21 @@
     "allDeclaredMethods": true
   },
   {
+    "name": "com.itwasneo.activejapp.provider.RedisProvider",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.itwasneo.activejapp.provider.MongoProvider",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.itwasneo.activejapp.provider.MongoRepositoryConfiguration",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  },
+  {
     "name": "io.activej.launchers.http.HttpServerLauncher",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
@@ -11,5 +26,12 @@
   {
     "name": "io.activej.service.ServiceGraphModule",
     "allDeclaredMethods": true
+  },
+  {
+    "name": "org.apache.commons.pool2.impl.DefaultEvictionPolicy",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
   }
 ]
