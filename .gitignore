@@ -5,3 +5,11 @@
 /activej-app/buildNumber.properties
 /activej-app/.mvn/timing.properties
 /activej-app/.mvn/wrapper/maven-wrapper.jar
+
+/quarkus-app/.idea/
+/quarkus-app/target/
+/quarkus-app/dependency-reduced-pom.xml
+/quarkus-app/release.properties
+/quarkus-app/buildNumber.properties
+/quarkus-app/.mvn/timing.properties
+/quarkus-app/.mvn/wrapper/maven-wrapper.jar

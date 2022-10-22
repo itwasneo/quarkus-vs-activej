@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <activej.version>5.4.3</activej.version>
         <jedis.version>4.3.1</jedis.version>
         <mongodb-driver-sync.version>4.7.1</mongodb-driver-sync.version>
@@ -31,18 +33,6 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-pool2</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.11.1</version>
         </dependency>
 
         <dependency>
@@ -85,7 +75,7 @@
                             <execution>
                                 <id>build-native</id>
                                 <goals>
-                                    <goal>build</goal>
+                                    <goal>compile-no-fork</goal>
                                 </goals>
                                 <phase>package</phase>
                             </execution>

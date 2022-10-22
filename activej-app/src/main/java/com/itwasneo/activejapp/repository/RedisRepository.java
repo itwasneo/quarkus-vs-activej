@@ -20,25 +20,27 @@ public class RedisRepository<T> {
 		this.objectMapper = objectMapper;
 	}
 
-	public Optional<T> findByKeys(Class<T> type, String... keys) {
+	public Optional<String> findByKeys(Class<T> type, String... keys) {
 		try {
 			String redisResult = redisPool.get(createRedisKey(keys));
 			if (redisResult == null || redisResult.isEmpty()) {
 				return Optional.empty();
 			}
-			return Optional.of(objectMapper.readValue(redisResult, type));
+			objectMapper.readValue(redisResult, type);
+			return Optional.of(redisResult);
 		} catch (JsonProcessingException jpe) {
 			logger.error("", jpe);
 			return Optional.empty();
 		}
 	}
 
-	public String save(T obj, String... keys) {
+	public boolean save(T obj, String... keys) {
 		try {
-			return redisPool.set(createRedisKey(keys), objectMapper.writeValueAsString(obj));
+			redisPool.set(createRedisKey(keys), objectMapper.writeValueAsString(obj));
+			return true;
 		} catch (JsonProcessingException jpe) {
 			logger.error("", jpe);
-			return "Couldn't Save";
+			return false;
 		}
 	}
 

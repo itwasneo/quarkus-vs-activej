@@ -9,6 +9,11 @@
     "allDeclaredFields": true
   },
   {
+    "name": "com.itwasneo.activejapp.model.Human",
+    "allDeclaredMethods": true,
+    "allPublicConstructors": true
+  },
+  {
     "name": "com.itwasneo.activejapp.provider.MongoProvider",
     "allDeclaredMethods": true,
     "allDeclaredFields": true

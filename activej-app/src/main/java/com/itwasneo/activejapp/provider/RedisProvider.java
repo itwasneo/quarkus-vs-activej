@@ -40,5 +40,9 @@ public class RedisProvider {
 		return injector.getInstance(key);
 	}
 
+	public static ObjectMapper getObjectMapper() {
+		return injector.getInstance(ObjectMapper.class);
+	}
+
 	private RedisProvider() {}
 }
